@@ -1,0 +1,21 @@
+public class Pair {
+    public static void main(String[] args) {
+        int[] arr = {1, 1, 3,4,5,5,5,6};
+
+        int i = 0; // slow pointer
+        System.out.println(arr[i]);
+
+        for (int j = 1; j < arr.length; j++) { // fast pointer
+            if (arr[j] != arr[i]) {
+                i++;
+                arr[i] = arr[j];
+                System.out.print(arr[i]+" ");
+            }
+        }
+
+        // Print unique elements
+        for (int k = 0; k <= i; k++) {
+            
+        }
+    }
+}
