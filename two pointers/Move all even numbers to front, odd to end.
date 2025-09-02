@@ -1,0 +1,28 @@
+public class PartitionByParity {
+    public static void main(String[] args) {
+        int[] arr = {3, 1, 2, 4};
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            if (arr[left] % 2 == 0) {
+                left++; // even number is in correct place
+            } else if (arr[right] % 2 != 0) {
+                right--; // odd number is in correct place
+            } else {
+                // Swap arr[left] (odd) with arr[right] (even)
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        // Print result
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
