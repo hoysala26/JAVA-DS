@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        int arr[]={1,5,2,9,4,2};
+        int max =0;
+        int left = 0;
+        int right = arr.length-1;
+        
+        while(left<right){
+            int min=Math.min(arr[left], arr[right]);
+            int ans=min*(right-left);
+            if(ans>max){
+                max=ans;
+            }
+            
+            if(arr[left]<arr[right]){
+                left++;
+            }else{
+                right--;   
+            }
+       
+        }
+        System.out.println(max);
+       
+    }
+
+    
+}
