@@ -1,0 +1,31 @@
+public class Prefix {
+    public static void main(String[] args) {
+        int[] arr ={5,4,3,-2,5};
+        int k = 5;
+        System.out.println(subarraysum(arr, k));
+    }
+    public static int subarraysum(int[] arr,int k) {
+        int n= arr.length;
+        int [] Prefix=new int [n];
+        Prefix[0]=arr[0];
+        for(int i=1;i<n;i++){
+            Prefix[i]=Prefix[i-1]+arr[i];
+        }
+        int count =0;
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                int sum;
+                if(i==0){
+                    sum=Prefix[j];
+                }else{
+                    sum=Prefix[j]-Prefix[i-1];
+                }
+                if(sum==k){
+                    System.out.println(arr[i]+" "+arr[j]+" = "+sum);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
