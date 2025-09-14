@@ -1,0 +1,17 @@
+public class Diagonal {
+    public static void main(String[] args) {
+        int[][] a = {
+            {1, 2, 3},
+            {5, 6, 7},
+            {9, 10, 11}
+        };
+
+        int min = Math.min(a.length, a[0].length);
+
+        System.out.print("Primary: ");
+        for (int i = 0; i < min; i++) System.out.print(a[i][i] + " ");
+
+        System.out.print("\nSecondary: ");
+        for (int i = 0; i < min; i++) System.out.print(a[i][a[0].length - 1 - i] + " ");
+    }
+}
